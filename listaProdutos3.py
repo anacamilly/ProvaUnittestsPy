@@ -1,3 +1,4 @@
+##Somar numeros do array
 def soma_produtos(listProd):
     total_renda = 0
     for elem in listProd:

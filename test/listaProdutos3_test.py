@@ -6,4 +6,3 @@ class test_total_produtos(unittest.TestCase):
 
         r_esperado = (372.79999999999995)
         self.assertEqual(soma_produtos(venda), r_esperado)
-        
