@@ -1,12 +1,11 @@
-def valores_venda_mensal(venda_mensal):
-    total_renda = 0
+from listaValoresVendaMensal import *
+import unittest
 
-    for elem in venda_mensal:
-        total_renda += elem[1]
-    percentual_renda = []
-    for elem in venda_mensal:
-        if (total_renda == 0):
-            percentual_renda.append((elem[1], 0))
-        else:
-            percentual_renda.append((round(elem[1] / total_renda)))
-    return percentual_renda
+class test_total_produtos(unittest.TestCase):
+    def test_melhoria_vendas_produtos(self):
+        situacao1 = [('1/22', 400.50), ('2/22', 1000.00), ('3/22', 10.50), ('4/22', 10.50)]
+
+        self.assertEqual(melhoria_vendas('1/22', situacao1), False)
+        self.assertEqual(melhoria_vendas('2/22', situacao1), 1.4969)
+        self.assertEqual(melhoria_vendas('3/22', situacao1), -0.9895)
+        self.assertEqual(melhoria_vendas('4/22', situacao1), 0)
